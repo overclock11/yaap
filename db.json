@@ -1,0 +1,156 @@
+{
+  "academic-programs": [
+    {
+      "id": "1",
+      "name": "Cocina",
+      "programSubjects": [
+        {
+          "id": "1",
+          "name": "Postres",
+          "teacher": {
+            "id": "1",
+            "name": "Rudolfu Aicardi"
+          }
+        },
+        {
+          "id": "2",
+          "name": "Cocina Colombiana",
+          "teacher": {
+            "id": "1",
+            "name": "Rudolfu Aicardi"
+          }
+        },
+        {
+          "id": "3",
+          "name": "Sopas",
+          "teacher": {
+            "id": "2",
+            "name": "Jorge Rausch"
+          }
+        },
+        {
+          "id": "4",
+          "name": "Cocina de mar",
+          "teacher": {
+            "id": "2",
+            "name": "Jorge Rausch"
+          }
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Ingenieria de software",
+      "programSubjects": [
+        {
+          "id": "1",
+          "name": "Redes",
+          "teacher": {
+            "id": "1",
+            "name": "Midu dev"
+          }
+        },
+        {
+          "id": "2",
+          "name": "Javascript",
+          "teacher": {
+            "id": "1",
+            "name": "Midu dev"
+          }
+        },
+        {
+          "id": "3",
+          "name": "Go",
+          "teacher": {
+            "id": "2",
+            "name": "Alex roel"
+          }
+        },
+        {
+          "id": "4",
+          "name": "Python",
+          "teacher": {
+            "id": "2",
+            "name": "Alex roel"
+          }
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Fisica",
+      "programSubjects": [
+        {
+          "id": "1",
+          "name": "Mecanica",
+          "teacher": {
+            "id": "1",
+            "name": "Omar Bohorquez"
+          }
+        },
+        {
+          "id": "2",
+          "name": "Optica",
+          "teacher": {
+            "id": "1",
+            "name": "Omar Bohorquez"
+          }
+        },
+        {
+          "id": "3",
+          "name": "Astrofisica",
+          "teacher": {
+            "id": "2",
+            "name": "Javier Santaolalla"
+          }
+        },
+        {
+          "id": "4",
+          "name": "Electromagnetica",
+          "teacher": {
+            "id": "2",
+            "name": "Javier Santaolalla"
+          }
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "name": "Artes",
+      "programSubjects": [
+        {
+          "id": "1",
+          "name": "Dibujo",
+          "teacher": {
+            "id": "1",
+            "name": "Emberg"
+          }
+        },
+        {
+          "id": "2",
+          "name": "Escultura",
+          "teacher": {
+            "id": "1",
+            "name": "Emberg"
+          }
+        },
+        {
+          "id": "3",
+          "name": "Historia del arte",
+          "teacher": {
+            "id": "2",
+            "name": "Carl itos"
+          }
+        },
+        {
+          "id": "4",
+          "name": "Arte moderno",
+          "teacher": {
+            "id": "2",
+            "name": "Carl itos"
+          }
+        }
+      ]
+    }
+  ]
+}

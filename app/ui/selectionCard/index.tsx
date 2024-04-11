@@ -17,31 +17,31 @@ interface SelectionCardProps {
     title: string;
     options: Option[];
     isMultiple: boolean
+    selectedOption: (optionValue: string) => void;
     className?: string
 }
 
-export default function SelectionCard({title, options, isMultiple, className = ""}: SelectionCardProps) {
-    console.log(options)
+export default function SelectionCard({title, options, isMultiple, selectedOption, className = ""}: SelectionCardProps) {
+    console.log(options);
     return (
         <Box className={className}>
             <Card>
                 <CardContent>
                     <Typography variant="h5" component="div">
-                        {title}{isMultiple}
+                        {title}
                     </Typography>
                     <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Age</InputLabel>
                         <Select
                             labelId="demo-simple-select-label"
                             id="demo-simple-select"
-                            value={options[0].id}
+                            value={"1"}
                             label="Age"
-                            onChange={(selectedOption) => {
-                                console.log(selectedOption)
+                            onChange={(event) => {
+                                selectedOption(event.target.value)
                             }}
                         >
                             {
-                                options.map((option) => {
+                                options?.map((option) => {
                                     return <MenuItem key={option.name} value={option.id}>{option.name}</MenuItem>
                                 })
                             }
