@@ -5,16 +5,18 @@ import {useEffect, useState} from "react";
 import {getAcademicPrograms} from "@/app/api/university";
 import {transformAcademicPrograms} from "@/app/utils/transformAcademicPrograms";
 import {AcademicProgramRaw} from "@/app/models/academicProgramRaw";
+import {OptionValues} from "@/app/models/optionValues";
 
 export default function Home() {
     const [academicPrograms, setAcademicPrograms] = useState<AcademicProgramRaw>({ "academic-programs": []});
+    const [academicProgramsOptions, setAcademicProgramsOptions] = useState<OptionValues[]>([{id: "1", name: "Ingenieria"}]);
 
     useEffect(() => {
-        const getPrograms = async () => {
-            const programs = await getAcademicPrograms();
-            setAcademicPrograms(programs);
-        }
-        getPrograms();
+        getAcademicPrograms()
+            .then((academicPrograms)=> {
+                setAcademicPrograms(academicPrograms)
+                setAcademicProgramsOptions(transformAcademicPrograms(academicPrograms));
+            })
     }, []);
 
     const handleAcademicProgram = (optionValue: string) => {
@@ -22,7 +24,7 @@ export default function Home() {
     }
     return (
         <main className={styles.main}>
-            <SelectionCard options={transformAcademicPrograms(academicPrograms)} isMultiple={false} title="Seleccione programa"
+            <SelectionCard options={academicProgramsOptions} isMultiple={false} title="Seleccione programa"
                            className={styles.card} selectedOption={handleAcademicProgram}/>
 {/*            <SelectionCard options={[{id: "1", name: "Ingenieria"}]} isMultiple={false} title="Seleccione materias"
                            className={styles.card}/>

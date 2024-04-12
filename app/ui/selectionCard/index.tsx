@@ -3,26 +3,23 @@ import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
-import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
+import {OptionValues} from "@/app/models/optionValues";
+import {useState} from "react";
 
-interface Option {
-    id: string;
-    name: string;
-}
 
 interface SelectionCardProps {
     title: string;
-    options: Option[];
+    options: OptionValues[];
     isMultiple: boolean
     selectedOption: (optionValue: string) => void;
     className?: string
 }
 
 export default function SelectionCard({title, options, isMultiple, selectedOption, className = ""}: SelectionCardProps) {
-    console.log(options);
+    const [option, setOption] = useState("1")
     return (
         <Box className={className}>
             <Card>
@@ -34,10 +31,11 @@ export default function SelectionCard({title, options, isMultiple, selectedOptio
                         <Select
                             labelId="demo-simple-select-label"
                             id="demo-simple-select"
-                            value={"1"}
+                            value={option}
                             label="Age"
                             onChange={(event) => {
-                                selectedOption(event.target.value)
+                                setOption(event.target.value as string);
+                                selectedOption(event.target.value as string);
                             }}
                         >
                             {
