@@ -9,14 +9,15 @@ import {OptionValues} from "@/app/models/optionValues";
 
 export default function Home() {
     const [academicPrograms, setAcademicPrograms] = useState<AcademicProgramRaw>({ "academic-programs": []});
-    const [academicProgramsOptions, setAcademicProgramsOptions] = useState<OptionValues[]>([{id: "1", name: "Ingenieria"}]);
+    const [academicProgramsOptions, setAcademicProgramsOptions] = useState<OptionValues[]>([{id: "1", name: "Cargando.."}]);
 
     useEffect(() => {
-        getAcademicPrograms()
-            .then((academicPrograms)=> {
-                setAcademicPrograms(academicPrograms)
-                setAcademicProgramsOptions(transformAcademicPrograms(academicPrograms));
-            })
+        const getPrograms = async () => {
+            const programs = await getAcademicPrograms()
+            setAcademicPrograms(programs)
+            setAcademicProgramsOptions(transformAcademicPrograms(programs));
+        }
+        getPrograms();
     }, []);
 
     const handleAcademicProgram = (optionValue: string) => {
