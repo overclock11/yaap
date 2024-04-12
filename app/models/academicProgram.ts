@@ -1,16 +1,15 @@
-export interface AcademicProgram {
+export interface AcademicItem {
     id:              string;
     name:            string;
+}
+
+export interface AcademicProgram extends AcademicItem {
     programSubjects: ProgramSubject[];
 }
 
-export interface ProgramSubject {
-    id:      string;
-    name:    string;
+export interface ProgramSubject extends AcademicItem {
     teacher: Teacher;
 }
 
-export interface Teacher {
-    id:   string;
-    name: string;
+export interface Teacher extends AcademicItem {
 }

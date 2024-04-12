@@ -1,11 +1,11 @@
 import {OptionValues} from "@/app/models/optionValues";
-import {AcademicProgram} from "@/app/models/academicProgram";
+import {AcademicItem} from "@/app/models/academicProgram";
 
-export const transformAcademicPrograms = (programs: AcademicProgram[]): OptionValues[] => {
-    return programs.map((program)=> {
+export const transformToOptions = (items: AcademicItem[]): OptionValues[] => {
+    return items.map((item)=> {
         return {
-            id: program.id,
-            name: program.name
+            id: item.id,
+            name: item.name
         }
     });
 }
