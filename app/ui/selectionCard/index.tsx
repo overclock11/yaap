@@ -13,12 +13,11 @@ import {useState} from "react";
 interface SelectionCardProps {
     title: string;
     options: OptionValues[];
-    isMultiple: boolean
     selectedOption: (optionValue: string) => void;
     className?: string
 }
 
-export default function SelectionCard({title, options, isMultiple, selectedOption, className = ""}: SelectionCardProps) {
+export default function SelectionCard({title, options, selectedOption, className = ""}: SelectionCardProps) {
     const [option, setOption] = useState("1")
     return (
         <Box className={className}>
